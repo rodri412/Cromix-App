@@ -1,0 +1,12 @@
+project_id = "AppMusical"
+
+[functions.spotify-search]
+# Requests are authenticated explicitly with auth.getUser inside the function.
+verify_jwt = false
+
+[functions.music-profile]
+verify_jwt = false
+
+[functions.shelf-albums]
+# Uses auth.getUser and checks opened gifts owned by the signed-in user.
+verify_jwt = false

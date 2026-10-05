@@ -1,13 +1,14 @@
 {
   "expo": {
-    "name": "mixtape-gacha",
+    "name": "Cromix",
     "slug": "mixtape-gacha",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cromix.app"
     },
     "android": {
       "adaptiveIcon": {
@@ -15,10 +16,55 @@
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+      },
+      "package": "com.cromix.app"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-router",
+      "expo-dev-client",
+      [
+        "expo-widgets",
+        {
+          "widgets": [
+            {
+              "name": "CromixMail",
+              "displayName": "Tu buzón musical",
+              "description": "Una canción de alguien que pensó en ti.",
+              "ios": {
+                "supportedFamilies": [
+                  "systemSmall",
+                  "systemMedium"
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      [
+        "react-native-android-widget",
+        {
+          "widgets": [
+            {
+              "name": "CromixMail",
+              "label": "Tu buzón musical",
+              "description": "Los regalos musicales que te esperan.",
+              "minWidth": "180dp",
+              "minHeight": "110dp",
+              "targetCellWidth": 3,
+              "targetCellHeight": 2,
+              "resizeMode": "horizontal|vertical",
+              "updatePeriodMillis": 1800000
+            }
+          ]
+        }
+      ]
+    ],
+    "scheme": "cromix"
   }
 }
